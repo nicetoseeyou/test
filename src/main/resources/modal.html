@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>Bootstrap 实例 - 模态框（Modal）插件</title>
+	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+	<script src="jquery/jquery-3.1.1.js"></script>
+	<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">
+	Start Modal
+	</button>
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<table class="table table-condensed">
+						<caption>精简表格布局</caption>
+						<thead>
+							<tr>
+								<th>名称</th>
+								<th>城市</th>
+								<th>邮编</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Tanmay</td>
+								<td>Bangalore</td>
+								<td><a data-toggle="collapse" data-target="#demo1">560001</a></td>
+							</tr>
+							<tr id="demo1" class="collapse">
+								<td>Sachin 1</td>
+								<td>Mumbai 1</td>
+								<td>400003 1</td>
+							</tr>
+							<tr>
+								<td>Sachin</td>
+								<td>Mumbai</td>
+								<td><a data-toggle="collapse" data-target="#demo2">560001</a></td>
+							</tr>
+							<tr id="demo2" class="collapse">
+								<td>Sachin 1</td>
+								<td>Mumbai 1</td>
+								<td>400003 1</td>
+							</tr>
+							<tr>
+								<td>Uma</td>
+								<td>Pune</td>
+								<td><a data-toggle="collapse" data-target="#demo3">560001</a></td>
+							</tr>
+							<tr id="demo3" class="collapse">
+								<td>Sachin 1</td>
+								<td>Mumbai 1</td>
+								<td>400003 1</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function () { 
+			$('.collapse').each(function(i){
+				$(this).on('show.bs.collapse', function () {
+					console.log($(this).attr("id"));
+					$(this).find("td").first().text("test");
+				})
+			});
+		});
+	</script> 
+
+</body>
+</html>
